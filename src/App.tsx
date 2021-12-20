@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import Header from './Components/Header/Header';
+import AsideNav from './Components/AsideNav/AsideNav';
+import MainContent from './Components/MainContent/MainContent';
+import Footer from './Components/Footer/Footer';
 
-function App() {
+const App: React.FC = () => {
+  const [ showAside, setShowAside ] = useState<boolean>(false);
+  
+  const openAside = () => setShowAside(true);
+  const closeAside = () => setShowAside(false);
+
+  useEffect(() => {
+    if (showAside) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "hidden scroll";
+  }, [ showAside ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header openAside={openAside} />
+      <AsideNav closeAside={closeAside} showAside={showAside} /> 
+      <MainContent />
+      <Footer />
+      <div id="reactOverlayPortal"></div>
+    </>
   );
 }
 
