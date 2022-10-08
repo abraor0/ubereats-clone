@@ -3,9 +3,10 @@ interface ButtonProps  {
   type?: 'submit' | 'button';
   secondary?: boolean;
   className?: string;
+  onClick?: () => void;
 };
 
-const Button: React.FC<ButtonProps> = ({ children, href, type, secondary, className = '' }) => {
+const Button: React.FC<ButtonProps> = ({ children, href, type, secondary, className = '', onClick }) => {
   let colors: string,
       defaultStyling: string;
   
@@ -15,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({ children, href, type, secondary, classN
   defaultStyling = 'rounded-full px-3 text-sm py-2';
 
   if (!href) return (
-    <button type={type || 'button'} className={`${defaultStyling} ${colors} ${className}`}>
+    <button type={type || 'button'} className={`${defaultStyling} ${colors} ${className}`} onClick={onClick}>
       {children}
     </button>
   );

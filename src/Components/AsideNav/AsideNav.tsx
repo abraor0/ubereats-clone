@@ -10,7 +10,7 @@ interface AsideNavProps {
 const AsideNav: React.FC<AsideNavProps> = ({ showAside, closeAside }) => (
   <aside className={`${showAside ? 'translate-x-0 opacity-1' : ' -translate-x-full opacity-0'} transition-[transform,opacity] duration-[700ms,400ms] z-20 flex flex-col max-w-[300px] fixed inset-y-0 left-0 p-6 text-sm text-neutral-900 bg-neutral-100`}>
     <Button href="/login" className="block overrides:rounded-none text-center overrides:py-4 overrides:text-lg">Fazer login</Button>
-    {showAside && <ScreenOverlay onClick={closeAside}/>}
+    {showAside && <ScreenOverlay stateAction={closeAside}/>}
     <ul className="pt-6">
       <li className="mb-4 last:mb-0"><a href="/bussiness">Criar conta da empresa</a></li>
       <li className="mb-4 last:mb-0"><a href="/restaurant">Adicione seu restaurante</a></li>
