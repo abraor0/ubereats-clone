@@ -7,7 +7,6 @@ interface ProductSectionProps {
 const ProductSection: React.FC<ProductSectionProps> = ({ data }) => {
   const itemsPayload = data.payload.standardItemsPayload;
   const catalogItems = itemsPayload.catalogItems;
-  console.log(data)
 
   return (
     <section className="mt-14">

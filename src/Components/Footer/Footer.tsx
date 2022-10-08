@@ -56,13 +56,13 @@ const Footer: React.FC = () => (
       <hr className="my-10"></hr>
       <div className="flex justify-between">
         <div className="text-xl flex gap-x-5">
-          <a href="https://facebook.com">
+          <a href="https://www.facebook.com/UberEats">
             <AiFillFacebook />
           </a>
-          <a href="https://twitter.com">
+          <a href="https://twitter.com/UberEats">
             <AiOutlineTwitter />
           </a>
-          <a href="https://instagram.com">
+          <a href="https://www.instagram.com/ubereats">
             <AiOutlineInstagram />
           </a>
         </div>
@@ -75,7 +75,7 @@ const Footer: React.FC = () => (
           </div>
           <div className="flex gap-7">
             <p className="">This site is protected by reCAPTCHA and the Google <a className="hover:underline" href="/">Privacy Policy</a> and <a className="hover:underline" href="/">Terms of Service</a> apply.</p>
-            <p>© 2021 Uber Technologies Inc.</p>
+            <p>{`© ${(new Date()).getUTCFullYear()} Uber Technologies Inc.`}</p>
           </div>
         </div>
       </div>
