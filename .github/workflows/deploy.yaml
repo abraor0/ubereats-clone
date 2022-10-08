@@ -12,10 +12,10 @@ jobs:
         node-version: 18
 
     - name: Install dependencies
-      run: npm Install
+      run: npm install
 
     - name: Build Pages
-      run: CI=false npm run Build
+      run: CI=false npm run build
 
     - name: Deploy to GH Pages
       uses: peaceiris/actions-gh-pages@v3
